@@ -7,8 +7,9 @@
         "test": "jest"
     },
     "dependencies": {
-        "react": "16.6.0-alpha.8af6728",
-        "react-native": "0.57.3"
+        "react": "16.5.2",
+        "react-native": "0.57.3",
+        "react-native-maps": "https://github.com/react-community/react-native-maps.git"
     },
     "devDependencies": {
         "@types/jest": "^23.3.5",

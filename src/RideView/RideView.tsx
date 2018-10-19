@@ -1,27 +1,31 @@
 import React, { Component } from "react";
 import { Button, StyleSheet, Text, View } from "react-native";
 
-export default class StartView extends Component {
+interface IRideViewProps {
+    toggleView: () => void;
+}
+
+export default class RideView extends Component<IRideViewProps> {
+
+    // TODO: Show speed
+    // TODO: Show acceleration?
+    // TODO: Implement SOS-System
+    // TODO: Show Map
+    // TODO: Show Distance
 
     public render() {
         return (
             <View style={styles.container}>
-                <Text style={styles.welcome}>Welcome to React Native!</Text>
-                <Text style={styles.instructions}>To get started, edit App.js</Text>
-                <Text style={styles.instructions}>sdf</Text>
+                <Text style={styles.welcome}>Ride</Text>
 
                 <Button
-                    onPress={this.onStartButtonPress}
-                    title="Ausritt starten"
+                    onPress={this.props.toggleView}
+                    title="Ausritt beenden"
                     color="#841584"
                     accessibilityLabel="Learn more about this purple button"
                 />
             </View>
         );
-    }
-
-    private onStartButtonPress() {
-
     }
 }
 

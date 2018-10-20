@@ -1,14 +1,9 @@
-import React, { Component } from "react";
-import { StyleSheet, Text, View, Image } from "react-native";
-import StorageService, { IPersistedRoute } from "../Services/StorageService";
+import { Component } from "react";
+import { Image, StyleSheet, Text, View } from "react-native";
 import Button from "../helperComponents/Button";
+import React from "react";
 
-interface IStartViewProps {
-    storageService: StorageService;
-    toggleView: () => void;
-}
-
-export default class StartView extends Component<IStartViewProps> {
+export default class EndView extends Component {
 
     private readonly styles = StyleSheet.create({
         container: {
@@ -30,7 +25,6 @@ export default class StartView extends Component<IStartViewProps> {
     });
 
     public render() {
-
         return (
             <View style={this.styles.container}>
                 <Image
@@ -38,7 +32,7 @@ export default class StartView extends Component<IStartViewProps> {
                     source={{uri: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg=='}}
                 />
 
-                <Text style={this.styles.welcome}>Welcome to React Native!</Text>
+                <Text style={this.styles.welcome}>Super!</Text>
                 <Text style={this.styles.instructions}>To get started, edit App.js</Text>
                 <Text style={this.styles.instructions}>sdf</Text>
 

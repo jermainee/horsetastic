@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View } from "react-native";
-import MapView, { LatLng, Polyline, Region } from 'react-native-maps';
+import MapView, { LatLng, Polyline } from 'react-native-maps';
 import StorageService, { IPersistedRoute } from "../Services/StorageService";
-import EmergancyButton from "../helperComponents/EmergancyButton";
+import { Colors } from "../helperComponents/Colors";
+import RideControls from "./components/RideControls";
+import EmergencyButton from "./components/EmergencyButton";
 
 interface IRideViewProps {
     storageService: StorageService;
@@ -21,13 +23,6 @@ interface IRideViewState {
 
 export default class RideView extends Component<IRideViewProps, IRideViewState> {
 
-    // TODO: Implement SOS-System
-    // TODO: Show Distance
-    // TODO: Implement route logger
-    // TODO: View for finished Route
-    // TODO: Move map logic into MapService
-    // TODO: Gamification!!!
-
     private readonly styles = StyleSheet.create({
         container: {
             paddingTop: 40,
@@ -37,12 +32,13 @@ export default class RideView extends Component<IRideViewProps, IRideViewState> 
             flexDirection: 'column',
             justifyContent: 'space-between',
         },
-        buttonContainer: {
+        controlsContainer: {
             flexDirection: 'row',
-            justifyContent: 'space-between'
+            justifyContent: 'space-between',
+            alignItems: 'center',
         },
         tile: {
-            backgroundColor: 'rgba(255, 255, 255, .8)',
+            backgroundColor: Colors.transparentWhite,
             borderRadius: 12,
             marginBottom: 10,
             padding: 10,
@@ -51,7 +47,7 @@ export default class RideView extends Component<IRideViewProps, IRideViewState> 
             overflow: 'hidden'
         },
         outerTile: {
-            backgroundColor: 'rgba(255, 255, 255, .7)',
+            backgroundColor: Colors.moreTransparentWhite,
             borderRadius: 12,
             paddingBottom: 10
         },
@@ -133,9 +129,9 @@ export default class RideView extends Component<IRideViewProps, IRideViewState> 
                     </Text>
                 </View>
 
-                <View style={this.styles.buttonContainer}>
-                    <EmergancyButton>Notfall</EmergancyButton>
-                    {/*<Button onButtonPress={this.handleButtonPress}>Ausritt beenden</Button>*/}
+                <View style={this.styles.controlsContainer}>
+                    <EmergencyButton>Notfall</EmergencyButton>
+                    <RideControls onPauseButtonPress={this.handleButtonPress} onStopButtonPress={this.handleButtonPress} />
                 </View>
             </View>
         );

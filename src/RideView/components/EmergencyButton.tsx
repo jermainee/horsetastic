@@ -1,12 +1,13 @@
 import { Component } from "react";
 import { AlertIOS, StyleSheet, Text, TouchableOpacity } from "react-native";
 import React from "react";
+import { Colors } from "../../helperComponents/Colors";
 
-export default class EmergancyButton extends Component {
+export default class EmergencyButton extends Component {
 
     private readonly styles = StyleSheet.create({
         circle: {
-            backgroundColor: '#ff0000',
+            backgroundColor: Colors.red,
             alignItems: 'center',
             justifyContent: 'center',
             width: 85,
@@ -15,7 +16,7 @@ export default class EmergancyButton extends Component {
         },
         text: {
             alignItems: 'center',
-            color:'#fff',
+            color: Colors.white,
             fontSize: 16,
             fontWeight: 'bold',
         }

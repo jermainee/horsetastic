@@ -102,7 +102,7 @@ export default class RideView extends Component<IRideViewProps, IRideViewState> 
                     <Polyline
                         coordinates={this.state.route}
                         strokeWidth={6}
-                        strokeColor='green'
+                        strokeColor={Colors.green}
                     />
                 </MapView>
 

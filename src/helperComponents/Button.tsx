@@ -17,7 +17,9 @@ export default class Button extends Component<IButtonProps> {
         paddingHorizontal: 20,
         borderRadius: 6,
         overflow: 'hidden',
+        fontSize: 16,
         fontWeight: 'bold',
+        textAlign: 'center'
     };
 
     public render() {

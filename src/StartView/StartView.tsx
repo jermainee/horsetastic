@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { StyleSheet, Text, View, Image } from "react-native";
-import StorageService, { IPersistedRoute } from "../Services/StorageService";
+import StorageService  from "../Services/StorageService";
 import Button from "../helperComponents/Button";
 import { Colors } from "../helperComponents/Colors";
 
@@ -15,18 +15,22 @@ export default class StartView extends Component<IStartViewProps> {
         container: {
             backgroundColor: Colors.white,
             flex: 1,
-            justifyContent: 'center',
-            alignItems: 'center'
+            flexDirection: 'column',
+            justifyContent: 'space-evenly',
+            alignItems: 'center',
+            paddingHorizontal: 10
         },
         headline: {
             color: Colors.black,
             fontSize: 20,
             fontWeight: 'bold',
-            margin: 10,
+            marginBottom: 10
         },
         text: {
             color: Colors.darkGrey,
-            marginBottom: 5,
+            fontSize: 16,
+            lineHeight: 22,
+            marginBottom: 20,
         },
     });
 
@@ -34,16 +38,21 @@ export default class StartView extends Component<IStartViewProps> {
 
         return (
             <View style={this.styles.container}>
+
                 <Image
-                    style={{width: 66, height: 58}}
-                    source={{uri: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADMAAAAzCAYAAAA6oTAqAAAAEXRFWHRTb2Z0d2FyZQBwbmdjcnVzaEB1SfMAAABQSURBVGje7dSxCQBACARB+2/ab8BEeQNhFi6WSYzYLYudDQYGBgYGBgYGBgYGBgYGBgZmcvDqYGBgmhivGQYGBgYGBgYGBgYGBgYGBgbmQw+P/eMrC5UTVAAAAABJRU5ErkJggg=='}}
+                    style={{width: 150, height: 150}}
+                    source={require('../images/horse.png')}
                 />
 
-                <Text style={this.styles.headline}>Der Ausritt kann los gehen!</Text>
-                <Text style={this.styles.text}>To get started, edit App.js</Text>
-                <Text style={this.styles.text}>sdf</Text>
+                <View>
+                    <Text style={this.styles.headline}>Der Ausritt kann losgehen!</Text>
+                    <Text style={this.styles.text}>
+                        Klicke einfach auf den Button und wir machen den Rest für dich.
+                        Falls du stürzen solltest, wird automatisch eine SMS mit deinem Standort an deinen Notfall-Kontakt gesendet.
+                    </Text>
 
-                <Button onButtonPress={this.props.toggleView}>Ausritt starten</Button>
+                    <Button onButtonPress={this.props.toggleView}>Ausritt starten</Button>
+                </View>
             </View>
         );
     }
